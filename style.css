@@ -4,40 +4,46 @@ body {
             background-color: lightgray;
         }
 
-        header {
+header {
             background-color: darkgreen;
             color: white;
             text-align: center;
             padding: 20px;
         }
 
-        nav {
+nav {
             background-color: white;
             text-align: center;
             padding: 10px;
         }
 
-        nav a {
+ nav a {
             text-decoration: none;
             margin: 10px;
             color: black;
         }
 
-        section {
+section {
             padding: 20px;
             text-align: center;
         }
 
-        .box {
+.box {
             background-color: white;
             border: 1px solid black;
             margin: 15px;
             padding: 15px;
         }
 
-        footer {
+footer {
             background-color: black;
             color: white;
             text-align: center;
             padding: 10px;
         }
+
+
+#inputSec {
+            text-align: center;
+            padding: 10px;
+}
