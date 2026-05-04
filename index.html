@@ -57,28 +57,6 @@
         <h2>Final Advice</h2>
         <p>Good sales is not about forcing people. It is about helping them make a good decision.</p>
     </section>
-<script>
-function getTips() {
-    var num = document.getElementById("numInput").value;
-    num = parseInt(num);
-
-    var tips = ["Identify The Problem", "Stay Disciplined", "Love what you do", "Don't give up", "Listen to others that've been doing it longer"];
-
-    if (num > tips.length || num <= 0 || isNaN(num)) {
-        document.getElementById("output").innerHTML = "Please enter a valid number.";
-    } else {
-        var text = "Number of tips shown: " + num + "<ul>";
-
-        for (var i = 0; i < num; i++) {
-            text += "<li>" + tips[i] + "</li>";
-        }
-
-        text += "</ul>";
-
-        document.getElementById("output").innerHTML = text;
-    }
-}
-</script>
     <footer>
         <p>© 2026 How to Sell Website</p>
     </footer>
