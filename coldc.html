@@ -6,36 +6,36 @@
   <title>Cold Call options</title>
   <link rel="stylesheet" href="style.css">
   </head>
+  <body>
+    <h1>Some tips</h1>
+  <input type="number" id="numInput" placeholder="Enter number">
+<button onclick="getTips()">Submit</button>
+<p id="output"></p>
 <script>
-function scripts() {
-    var name = document.getElementById("nameInput").value;
+function getTips() {
     var num = document.getElementById("numInput").value;
     num = parseInt(num);
 
-    var scripts = [
-        "Hi, this is " + name + ". I noticed your business doesn’t have a strong online presence and I wanted to show you something that could bring in more customers.", "Hey, this is " + name + ". Quick question — if I could show you a way to get more customers without taking up your time, would you be open to seeing it?", "Hi, " + name + " here. I specialize in helping businesses upgrade their websites. I saw yours and had a few ideas that could seriously improve conversions.", "Hello, this is " + name + ". I work with businesses like yours to improve their online presence. I had a quick idea I think you'd find valuable.", "Hey, it’s " + name + ". I help businesses generate more leads through better websites and automation — I wanted to quickly share something with you."
-    ];
+    var tips = ["Identify The Problem", "Stay Disciplined", "Love what you do", "Don't give up", "Listen to others that've been doing it longer"];
 
-    if (name === "" || isNaN(num)) {
-        document.getElementById("output").innerHTML = "Please enter your name and a valid number.";
-    } 
-    else {
-        var index = num % scripts.length;
-        var result = "<h3>Your Cold Call Script:</h3><p>" + scripts[index] + "</p>";
+    if (num > tips.length || num <= 0 || isNaN(num)) {
+        document.getElementById("output").innerHTML = "Please enter a valid number.";
+    } else {
+        var text = "Number of tips shown: " + num + "<ul>";
 
-        document.getElementById("output").innerHTML = result;
+        for (var i = 0; i < num; i++) {
+            text += "<li>" + tips[i] + "</li>";
+        }
+
+        text += "</ul>";
+
+        document.getElementById("output").innerHTML = text;
     }
 }
 </script>
-<body>
-<h1>Cold Call Script Generator</h1>
-<section>
-<input type="text" id="nameInput" placeholder="Enter your name">
-<input type="number" id="numInput" placeholder="Enter a number">
-<button onclick="scripts()">Generate Script</button>
-</section>
-<div id="output"></div>
+    <footer>
+        <p>© 2026 How to Sell Website</p>
+    </footer>
 
-
-  </body>
+</body>
 </html>
