@@ -47,3 +47,23 @@ footer {
             text-align: center;
             padding: 10px;
 }
+
+.sales-people {
+  text-align: center;
+  margin: 30px;
+}
+
+.person {
+  display: inline-block;
+  margin: 15px;
+}
+
+.person img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+}
+
+.person p {
+  font-weight: bold;
+}
