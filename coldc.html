@@ -6,21 +6,7 @@
   <title>Cold Call options</title>
   <link rel="stylesheet" href="style.css">
   </head>
-  <body>
-    <header>
-    <h1>How to Sell</h1>
-    <p>Some Cold call tips</p>
-   </header>
-        <nav>
-        <a href="index.html">Home</a>
-        <a href="coldc.html">Scripts</a>
-        <a href="videos.html">Videos</a>
-    </nav>
-    <h1>Some tips</h1>
-  <input type="number" id="numInput" placeholder="Enter number">
-<button onclick="getTips()">Submit</button>
-<p id="output"></p>
-<script>
+  <script>
 function getTips() {
     var num = document.getElementById("numInput").value;
     num = parseInt(num);
@@ -42,6 +28,44 @@ function getTips() {
     }
 }
 </script>
+  <body>
+    <header>
+    <h1>How to Sell</h1>
+    <p>Some Cold call tips</p>
+   </header>
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="coldc.html">Scripts</a>
+        <a href="videos.html">Videos</a>
+    </nav>
+    <h1>Some tips</h1>
+  <input type="number" id="numInput" placeholder="Enter number">
+<button onclick="getTips()">Submit</button>
+<p id="output"></p>
+    <section class="sales-people">
+  <h2>Famous Sales People</h2>
+
+  <div class="person">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Steve_Jobs_Headshot_2010-CROP.jpg/500px-Steve_Jobs_Headshot_2010-CROP.jpg" alt="Steve Jobs">
+    <p>Steve Jobs</p>
+  </div>
+
+  <div class="person">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Mark_Cuban_2023.jpg/500px-Mark_Cuban_2023.jpg" alt="Mark Cuban">
+    <p>Mark Cuban</p>
+  </div>
+
+  <div class="person">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Barbara_Corcoran_photo.jpg/500px-Barbara_Corcoran_photo.jpg" alt="Barbara Corcoran">
+    <p>Barbara Corcoran</p>
+  </div>
+
+  <div class="person">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Grant_Cardone_2015.jpg/500px-Grant_Cardone_2015.jpg" alt="Grant Cardone">
+    <p>Grant Cardone</p>
+  </div>
+</section>
+
     <footer>
         <p>© 2026 How to Sell Website</p>
     </footer>
