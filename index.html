@@ -66,12 +66,6 @@
         <p id="output"></p>
     </section>
 
-    <section class="box">
-        <h2>Sales Confidence Meter</h2>
-        <p>Move the slider to rate your confidence today.</p>
-        <input type="range" min="1" max="10" value="5" id="confidenceSlider" oninput="updateConfidence()">
-        <p id="confidenceOutput">Confidence level: 5/10</p>
-    </section>
 
     <section>
         <h2>Final Advice</h2>
@@ -122,10 +116,6 @@
             document.getElementById("output").innerHTML = tips[randomNumber];
         }
 
-        function updateConfidence() {
-            var level = document.getElementById("confidenceSlider").value;
-            document.getElementById("confidenceOutput").innerHTML = "Confidence level: " + level + "/10";
-        }
 
         function changeHeaderText() {
             document.getElementById("mainMessage").innerHTML = "Sales Is About Helping People";
