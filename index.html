@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Sell</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>How to Sell</h1>
+        <p>Simple tips to help you become better at sales</p>
+        <button onclick="changeHeaderText()">Change Header Message</button>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="coldc.html">Scripts</a>
+        <a href="videos.html">Videos</a>
+    </nav>
+
+    <section>
+        <h2 id="mainMessage">Why Sales Matters</h2>
+        <p>Sales helps businesses grow. If you know how to talk to people and understand what they need, you can sell better.</p>
+    </section>
+
+    <section class="box">
+        <h2>Personal Greeting</h2>
+        <p>Enter your name to get a custom message.</p>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="showMessage()">Submit</button>
+        <p id="greetingOutput"></p>
+    </section>
+
+    <section>
+        <h2>Basic Sales Tips</h2>
+
+        <div class="box">
+            <h3>1. Be Confident</h3>
+            <p>Speak clearly and believe in what you are saying.</p>
+        </div>
+
+        <div class="box">
+            <h3>2. Listen First</h3>
+            <p>Listen to what the customer wants before trying to sell.</p>
+        </div>
+
+        <div class="box">
+            <h3>3. Explain the Value</h3>
+            <p>Show the person why the product or service can help them.</p>
+        </div>
+
+        <div class="box">
+            <h3>4. Be Friendly</h3>
+            <p>People are more likely to buy from someone they like and trust.</p>
+        </div>
+    </section>
+
+    <section class="box">
+        <h2>Some Tips</h2>
+        <p>Type a number to choose how many sales tips you want to see.</p>
+        <input type="number" id="numInput" placeholder="Enter number">
+        <button onclick="getTips()">Show Tips</button>
+        <button onclick="randomTip()">Random Tip</button>
+        <p id="output"></p>
+    </section>
+
+    <section class="box">
+        <h2>Sales Confidence Meter</h2>
+        <p>Move the slider to rate your confidence today.</p>
+        <input type="range" min="1" max="10" value="5" id="confidenceSlider" oninput="updateConfidence()">
+        <p id="confidenceOutput">Confidence level: 5/10</p>
+    </section>
+
+    <section>
+        <h2>Final Advice</h2>
+        <p>Good sales is not about forcing people. It is about helping them make a good decision.</p>
+    </section>
+
+    <footer>
+        <p>© 2026 How to Sell Website</p>
+    </footer>
+
+    <script>
+        var tips = [
+            "Identify the customer's problem.",
+            "Stay disciplined and practice often.",
+            "Believe in what you are selling.",
+            "Do not give up after one rejection.",
+            "Listen to people who have more experience.",
+            "Ask questions before explaining your offer.",
+            "End the conversation with a clear next step."
+        ];
+
+        function showMessage() {
+            var name = document.getElementById("nameInput").value;
+            if (name === "") {
+                document.getElementById("greetingOutput").innerHTML = "Please enter your name.";
+            } else {
+                document.getElementById("greetingOutput").innerHTML = "Hello " + name + ", keep practicing and your sales skills will improve.";
+            }
+        }
+
+        function getTips() {
+            var num = parseInt(document.getElementById("numInput").value);
+
+            if (num > tips.length || num <= 0 || isNaN(num)) {
+                document.getElementById("output").innerHTML = "Please enter a number from 1 to " + tips.length + ".";
+            } else {
+                var text = "<ul>";
+                for (var i = 0; i < num; i++) {
+                    text += "<li>" + tips[i] + "</li>";
+                }
+                text += "</ul>";
+                document.getElementById("output").innerHTML = text;
+            }
+        }
+
+        function randomTip() {
+            var randomNumber = Math.floor(Math.random() * tips.length);
+            document.getElementById("output").innerHTML = tips[randomNumber];
+        }
+
+        function updateConfidence() {
+            var level = document.getElementById("confidenceSlider").value;
+            document.getElementById("confidenceOutput").innerHTML = "Confidence level: " + level + "/10";
+        }
+
+        function changeHeaderText() {
+            document.getElementById("mainMessage").innerHTML = "Sales Is About Helping People";
+        }
+    </script>
+
+</body>
+</html>

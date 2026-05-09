@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Scripts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Sales Scripts</h1>
+    <p>Practice cold call scripts and search famous salespeople</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="coldc.html">Scripts</a>
+    <a href="videos.html">Videos</a>
+  </nav>
+
+  <section class="box">
+    <h2>Create a Cold Call Script</h2>
+    <p>Enter your name and what you are selling.</p>
+    <input type="text" id="callerName" placeholder="Your name">
+    <input type="text" id="productName" placeholder="What are you selling?">
+    <button onclick="makeScript()">Generate Script</button>
+    <p id="scriptOutput"></p>
+  </section>
+
+  <section class="box">
+    <h2>Choose a Script Type</h2>
+    <select id="scriptType">
+      <option value="intro">Introduction Script</option>
+      <option value="followup">Follow-Up Script</option>
+      <option value="closing">Closing Script</option>
+    </select>
+    <button onclick="showScriptType()">Show Script</button>
+    <p id="scriptTypeOutput"></p>
+  </section>
+
+  <section class="box">
+    <h2>Objection Helper</h2>
+    <p>Choose a common objection to see a possible response.</p>
+    <select id="objectionChoice">
+      <option value="busy">I'm too busy</option>
+      <option value="money">It costs too much</option>
+      <option value="think">I need to think about it</option>
+    </select>
+    <button onclick="handleObjection()">Get Response</button>
+    <p id="objectionOutput"></p>
+  </section>
+
+  <section class="sales-people">
+    <h2>Search Famous Salespeople</h2>
+    <p>Type a name like Steve Jobs, Mark Cuban, Barbara Corcoran, or Grant Cardone.</p>
+    <input type="text" id="searchInput" placeholder="Search name" onkeyup="searchPeople()">
+
+    <div id="peopleList">
+      <div class="person" data-name="Steve Jobs">
+        <a href="https://www.biography.com/business-leaders/steve-jobs" target="_blank">
+          <img src="https://www.altonivel.com.mx/wp-content/uploads/2025/02/historia-apple.webp" alt="Steve Jobs">
+        </a>
+        <p>Steve Jobs</p>
+        <small>Click image to learn more</small>
+      </div>
+
+      <div class="person" data-name="Mark Cuban">
+        <a href="https://www.forbes.com/profile/mark-cuban/" target="_blank">
+          <img src="https://people.com/thmb/2Awh1k5y8GjjxoocEfdhdG6t4DI=/4000x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(2467x1178:2469x1180)/mark-cuban-082123-01-1bb333030e3c413c8c4b84ff81c410a5.jpg" alt="Mark Cuban">
+        </a>
+        <p>Mark Cuban</p>
+        <small>Click image to learn more</small>
+      </div>
+
+      <div class="person" data-name="Barbara Corcoran">
+        <a href="https://www.entrepreneur.com/leadership/see-shark-tanks-barbara-corcoran-career-interview-and-more/250926" target="_blank">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.oC1G8J4iOnc0HFxV1LAGugHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Barbara Corcoran">
+        </a>
+        <p>Barbara Corcoran</p>
+        <small>Click image to learn more</small>
+      </div>
+
+      <div class="person" data-name="Grant Cardone">
+        <a href="https://10xbusinesscoach.com/about/" target="_blank">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.wy2Bq2k8zUsnQpfYeeO8LwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Grant Cardone">
+        </a>
+        <p>Grant Cardone</p>
+        <small>Click image to learn more</small>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 How to Sell Website</p>
+  </footer>
+
+  <script>
+    function makeScript() {
+      var name = document.getElementById("callerName").value;
+      var product = document.getElementById("productName").value;
+
+      if (name === "" || product === "") {
+        document.getElementById("scriptOutput").innerHTML = "Please enter your name and what you are selling.";
+      } else {
+        document.getElementById("scriptOutput").innerHTML = "Hi, my name is " + name + ". I help people with " + product + ". I wanted to quickly ask if improving this area is something you are interested in.";
+      }
+    }
+
+    function showScriptType() {
+      var type = document.getElementById("scriptType").value;
+      var message = "";
+
+      if (type === "intro") {
+        message = "Hi, my name is ___, and I wanted to quickly introduce myself. I help people solve problems with ___.";
+      } else if (type === "followup") {
+        message = "Hi, I just wanted to follow up from our last conversation and see if you had any thoughts about moving forward.";
+      } else {
+        message = "Based on what we talked about, does it make sense to take the next step today?";
+      }
+
+      document.getElementById("scriptTypeOutput").innerHTML = message;
+    }
+
+    function handleObjection() {
+      var choice = document.getElementById("objectionChoice").value;
+      var response = "";
+
+      if (choice === "busy") {
+        response = "I understand. Would it be better if I gave you the quick version in 20 seconds?";
+      } else if (choice === "money") {
+        response = "I understand. The goal is to make sure the value is greater than the cost.";
+      } else {
+        response = "That makes sense. What information would help you make a clearer decision?";
+      }
+
+      document.getElementById("objectionOutput").innerHTML = response;
+    }
+
+    function searchPeople() {
+      var input = document.getElementById("searchInput").value.toLowerCase();
+      var people = document.getElementsByClassName("person");
+
+      for (var i = 0; i < people.length; i++) {
+        var name = people[i].getAttribute("data-name").toLowerCase();
+
+        if (name.includes(input)) {
+          people[i].style.display = "inline-block";
+        } else {
+          people[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
