@@ -52,9 +52,8 @@
   </section>
 
   <section class="sales-people">
-    <h2>Search Famous Salespeople</h2>
-    <p>Type a name like Steve Jobs, Mark Cuban, Barbara Corcoran, or Grant Cardone.</p>
-    <input type="text" id="searchInput" placeholder="Search name" onkeyup="searchPeople()">
+    <h2>Famous Salespeople</h2>
+    <p>Click a person to learn more</p>
 
     <div id="peopleList">
       <div class="person" data-name="Steve Jobs">
@@ -137,20 +136,7 @@
       document.getElementById("objectionOutput").innerHTML = response;
     }
 
-    function searchPeople() {
-      var input = document.getElementById("searchInput").value.toLowerCase();
-      var people = document.getElementsByClassName("person");
-
-      for (var i = 0; i < people.length; i++) {
-        var name = people[i].getAttribute("data-name").toLowerCase();
-
-        if (name.includes(input)) {
-          people[i].style.display = "inline-block";
-        } else {
-          people[i].style.display = "none";
-        }
-      }
-    }
+    
   </script>
 
 </body>
